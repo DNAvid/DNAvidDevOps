@@ -10,4 +10,4 @@ chmod +x /usr/local/bin/docker-machine
 ## Install AWS-CLI
 ## ## Install pip
 sudo apt-get install python-pip
-
+sudo pip install awscli
