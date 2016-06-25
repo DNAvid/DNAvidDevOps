@@ -11,3 +11,8 @@ chmod +x /usr/local/bin/docker-machine
 ## ## Install pip
 sudo apt-get install python-pip
 sudo pip install awscli
+
+## create standard credential file for Amazon AWS ~/.aws/credentials
+aws configure
+## AWS Access Key ID [None]: AKIAJ3X3EJRAYDNJJ4KQ
+## AWS Secret Access Key [None]: 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
