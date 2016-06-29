@@ -18,3 +18,4 @@ sudo pip install awscli
 aws configure
 ## AWS Access Key ID [None]: AKIAJ3X3EJRAYDNJJ4KQ
 ## AWS Secret Access Key [None]: 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
+docker-machine --debug create --amazonec2-vpc-id vpc-89ac9be0 --amazonec2-subnet-id subnet-bf2610c4 --amazonec2-region eu-central-1 --amazonec2-zone b --driver amazonec2 webserver
