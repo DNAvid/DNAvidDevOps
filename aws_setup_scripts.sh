@@ -1,6 +1,7 @@
 ## EC2 No 1
 ## Install Git
-sudo apt-get git
+sudo apt-get update
+sudo apt-get install git
 
 ## Install Docker-Machine
 ## https://docs.docker.com/machine/install-machine/
