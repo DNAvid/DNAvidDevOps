@@ -27,13 +27,8 @@ sudo service docker start
 sudo docker run hello-world
 
 ## Run Docker image for a MEANJS stack app
-## Get one of the containers on dckerhub, the one with the most stars (the one with the most pulls is out of date)
-sudo docker run -ti meanjs/mean bash
-
-## On the container machine
 ## Create a new user
-
-
-
-
-
+sudo docker run -p 27017:27017 -d --name db mongo
+sudo docker run -p 80:3000 --link db:db_1 -ti meanjs/mean bash
+# When on meanjs/mean image
+grunt
