@@ -30,5 +30,10 @@ sudo docker run hello-world
 ## Get one of the containers on dckerhub, the one with the most stars (the one with the most pulls is out of date)
 sudo docker run -ti meanjs/mean bash
 
+## On the container machine
+## Create a new user
+
+
+
 
 
