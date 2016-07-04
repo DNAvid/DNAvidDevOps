@@ -26,4 +26,9 @@ sudo service docker start
 ## Verify docker is installed correctly.
 sudo docker run hello-world
 
-## Run Docker image for 
+## Run Docker image for a MEANJS stack app
+## Get one of the containers on dckerhub, the one with the most stars (the one with the most pulls is out of date)
+sudo docker run -ti meanjs/mean bash
+
+
+
