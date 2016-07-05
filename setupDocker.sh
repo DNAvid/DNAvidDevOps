@@ -4,7 +4,7 @@ gcloud compute --project "tutorials-1357" instances create "instance-2" --zone "
 ## Setup docker on debian gcp instance
 ##  see https://docs.docker.com/engine/installation/linux/debian/
 sudo apt-get update
-sudo apt-get install apt-transport-https ca-certificates
+sudo apt-get -y install apt-transport-https ca-certificates
 sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 sudo touch /etc/apt/sources.list.d/docker.list
 sudo vim /etc/apt/sources.list.d/docker.list 
@@ -18,7 +18,7 @@ apt-cache policy docker-engine
 ## Update the APT package index.
 sudo apt-get update
 ## Install Docker.
-sudo apt-get install docker-engine
+sudo apt-get -y install docker-engine
 
 
 ##Start the docker daemon.
