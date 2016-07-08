@@ -3,20 +3,20 @@
 
 ## Setup docker on debian gcp instance
 ##  see https://docs.docker.com/engine/installation/linux/debian/
-sudo apt-get update
+sudo apt-get -y update
 sudo apt-get -y install apt-transport-https ca-certificates
 sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 sudo touch /etc/apt/sources.list.d/docker.list
-sudo vim /etc/apt/sources.list.d/docker.list 
+## sudo vim /etc/apt/sources.list.d/docker.list
 ## copy this line into file then save and quit vim
-deb https://apt.dockerproject.org/repo debian-jessie main
-sudo apt-get update
+## deb https://apt.dockerproject.org/repo debian-jessie main
+sudo apt-get -y update
 ## Just a check
-apt-cache policy docker-engine
+apt-cache -y policy docker-engine
 
 ## Install Docker proper
 ## Update the APT package index.
-sudo apt-get update
+sudo apt-get -y update
 ## Install Docker.
 sudo apt-get -y install docker-engine
 
