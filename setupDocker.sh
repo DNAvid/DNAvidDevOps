@@ -12,7 +12,7 @@ sudo touch /etc/apt/sources.list.d/docker.list
 ## deb https://apt.dockerproject.org/repo debian-jessie main
 sudo apt-get -y update
 ## Just a check
-apt-cache -y policy docker-engine
+apt-cache policy docker-engine
 
 ## Install Docker proper
 ## Update the APT package index.
