@@ -3,7 +3,7 @@
 sudo docker run -p 27017:27017 -d --name dbdev mongo
 sudo docker run -p 80:3000 --link dbdev:db_1 -ti --name meanjsdev meanjs/mean bash
 ## Map livereload port??
-## sudo docker run -p 80:3000 80:35729 --link db:db_1 -ti meanjs/mean bash
+## sudo docker run -p 80:3000 -p 35729:35729 --link db:db_1 -ti meanjs/mean bash
 ## When on meanjs/mean image
 grunt
 
