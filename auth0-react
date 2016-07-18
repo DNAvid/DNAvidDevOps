@@ -1,3 +1,4 @@
+## Install node.js
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
@@ -10,8 +11,8 @@ sudo apt-get install -y nodejs
 
 
 ## forked-from repo git clone https://github.com/auth0-samples/auth0-react-sample.git
-git clone https://github.com/DNAvid/DNAvidDevOps.git
-cd auth0-react-sample/00-Starter-Seed/
+https://github.com/DNAvid/auth0-react-sample.git
+cd auth0-react-sample/01-Login/
 
 # Install the dependencies
 npm install
