@@ -11,7 +11,7 @@ syntax on
 "  Indentation
 filetype plugin indent on
 set expandtab
-set tabstop = 2
+set tabstop=2
 
 " Plugin manager
 execute pathogen#infect()
