@@ -11,7 +11,7 @@ sudo apt-get install -y nodejs
 
 
 ## forked-from repo git clone https://github.com/auth0-samples/auth0-react-sample.git
-https://github.com/DNAvid/auth0-react-sample.git
+git clone https://github.com/DNAvid/auth0-react-sample.git
 cd auth0-react-sample/01-Login/
 
 # Install the dependencies
