@@ -2,6 +2,11 @@
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
+## Install enhancer for netrw (:Explorer)
+
+cd ~/.vim/bundle
+git clone git://github.com/tpope/vim-vinegar.git
+
 #### Copy to .vimrc file
 ======
 " Tree view for :Explore
