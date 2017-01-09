@@ -11,3 +11,6 @@ _TCP_PORT/test"'
 ## Load json into db
 mongoimport --db test --collection restaurants --drop --file ~/downloads/primer-dataset.json
 
+
+## Configure secure login (initial password is secret)
+> db.createUser({ user: 'dnavid', pwd: 'some-initial-password', roles: [ { role: "userAdminAnyDatabase", db: "admin" } ] });
