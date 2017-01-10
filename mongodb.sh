@@ -1,22 +1,19 @@
-# get the mongo docker
-sudo docker pull mongo
+# Secure version
+## https://hub.docker.com/r/khezen/mongo/
+## sudo docker run -d -p 27017:27017 --name dnavid khezen/mongo:latest
+sudo docker pull khezen/mongo
+sudo docker run -d -p 27017:27017 -e ADMIN_USER=admin -e ADMIN_PWD=secret-password -e AUTH=y --name dnavid khezen/mongo:latest
+sudo docker run -it --link dnavid:mongo --rm mongo sh -c 'exec mongo -u admin -p secret-password  "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/admin"'
 
-## Start a docker container with mongo
-sudo docker run -p 27017:27017 --name dnavid -d mongo
-## Secure version
-sudo docker run -d -p 27017:27017 -e DB_USER=root -e DB_PWD=secret_pwd -e DB_NAME=dnavid khezen/mongo:latest
+## Create user inside
+> use dnavid
+> db.createUser(
+{
+        user: "api",
+        pwd: "api-secret-password",
+        roles: [ { role: "readWrite", db: "dnavid" } ]
+}
+)
 
-## connect to MongoDB Shell w/o uname and pwd
-sudo docker run -it --link dnavid:mongo --rm mongo sh -c 'exec mongo "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017
-_TCP_PORT/test"'
-
-## connect to MongoDB Shell w/ uname and pwd
-sudo docker run -it --link dnavid:mongo --rm mongo sh -u dnavid -p some-initial-password --authenticationDatabase admin-c 'exec mongo "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017
-_TCP_PORT/test"'
-
-## Load json into db
-mongoimport --db test --collection users --drop --file ~/users.json
-
-
-## Configure secure login (initial password is secret)
-## > db.createUser({ user: 'dnavid', pwd: 'some-initial-password', roles: [ { role: "userAdminAnyDatabase", db: "admin" } ] });
+## Cleanup
+## sudo docker stop dnavid; sudo docker rm dnavid
