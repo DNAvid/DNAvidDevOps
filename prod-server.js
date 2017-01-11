@@ -15,8 +15,7 @@ app.get('/', function (req, res) {
   res.sendFile('/home/davidweisss/auth0-react-sample/01-Login/dist/index.html')
 })
 app.use(express.static('/home/davidweisss/auth0-react-sample/01-Login/dist'));
-// handle every other route with index.html, which will contain
-// // a script tag to your application's JavaScript file(s).
+
 app.get('*', function (req, res){
   res.sendFile('/home/davidweisss/auth0-react-sample/01-Login/dist/index.html')
   })
