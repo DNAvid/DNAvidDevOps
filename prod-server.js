@@ -12,9 +12,15 @@ var PORT = 443;
 var HOST = '0.0.0.0';
 app = express();
 app.get('/', function (req, res) {
-  res.sendFile('/home/davidweisss/dist/index.html')
+  res.sendFile('/home/davidweisss/auth0-react-sample/01-Login/dist/index.html')
 })
-app.use(express.static('/home/davidweisss/dist'));
+app.use(express.static('/home/davidweisss/auth0-react-sample/01-Login/dist'));
+// handle every other route with index.html, which will contain
+// // a script tag to your application's JavaScript file(s).
+app.get('*', function (req, res){
+  res.sendFile('/home/davidweisss/auth0-react-sample/01-Login/dist/index.html')
+  })
+    
 server = https.createServer(https_options, app).listen(PORT, HOST);
 console.log('HTTPS Server listening on %s:%s', HOST, PORT);
 // Redirect from http port 80 to https
