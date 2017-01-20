@@ -8,9 +8,9 @@ sudo docker run -it --link dnavid:mongo --rm mongo sh -c 'exec mongo -u root -p 
 ## sudo docker stop dnavid; sudo docker rm dnavid
 
 // Create users database
-> use users
+use users
 // Create api user, behind authentication and authorization to read and write from user database
-> db.createUser(
+db.createUser(
 {
         user: "api",
         pwd: "api-secret-password",
@@ -22,8 +22,8 @@ sudo docker run -it --link dnavid:mongo --rm mongo sh -c 'exec mongo -u root -p 
 )
 
 // Create public user, reading information made public by users on public database
-> use public
-> db.createUser(
+use public
+db.createUser(
 {
         user: "public",
         pwd: "public-secret-password",
