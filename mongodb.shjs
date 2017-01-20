@@ -23,8 +23,11 @@ db.createUser(
 }
 )
 
-## Connect remotely
+// Connect remotely
 mongodb://api:api-secret-password@104.198.119.146:27017/users
+// From server
+sudo docker run -it --link dnavid:mongo --rm mongo sh -c 'exec mongo -u api -p api-secret-password  "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/users"'
+
 
 // Create public user, reading information made public by users on public database
 use public
@@ -37,3 +40,5 @@ db.createUser(
 )
 ## Connect remotely
 mongodb://public:xwxhJDvMzNiTjJtcgWDtKwuosKRtEak@104.198.119.146:27017/public
+// From server
+sudo docker run -it --link dnavid:mongo --rm mongo sh -c 'exec mongo -u public -p xwxhJDvMzNiTjJtcgWDtKwuosKRtEak "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/public"'
