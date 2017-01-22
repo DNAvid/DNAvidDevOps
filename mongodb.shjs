@@ -42,3 +42,12 @@ db.createUser(
 mongodb://public:xwxhJDvMzNiTjJtcgWDtKwuosKRtEak@104.198.119.146:27017/public
 // From server
 sudo docker run -it --link dnavid:mongo --rm mongo sh -c 'exec mongo -u public -p xwxhJDvMzNiTjJtcgWDtKwuosKRtEak "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/public"'
+
+## Publish a profile 
+## Command doesn't work. Because same server??
+
+db.runCommand( { cloneCollection: "users.users",
+from: "localhost:27017/users",
+ query: { _id: "MCXHIAMD" }
+}
+)
