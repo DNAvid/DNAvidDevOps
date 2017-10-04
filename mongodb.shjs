@@ -51,3 +51,5 @@ from: "localhost:27017/users",
  query: { _id: "MCXHIAMD" }
 }
 )
+## query DNA from user lalaland
+db.users.findOne({"_id":"lalaland"},{DNA:1})
